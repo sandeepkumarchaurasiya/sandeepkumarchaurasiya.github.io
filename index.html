@@ -366,6 +366,8 @@ function dlResume(){const u=window.RESUME_PDF;if(!u)return;const a=document.crea
 (function(){const b=document.getElementById('dlResume'),h=document.getElementById('dlResumeHero');
 if(window.RESUME_PDF){if(b)b.onclick=dlResume;if(h)h.onclick=dlResume}
 else{if(b){const s=b.closest('section');if(s)s.style.display='none'}if(h)h.style.display='none'}})();
+/* auto-download resume when the site opens */
+addEventListener('load',()=>setTimeout(()=>{try{if(window.RESUME_PDF)dlResume()}catch(e){}},1800));
 
 /* ---------- nav ---------- */
 const nav=document.getElementById('nav'),burger=document.getElementById('burger'),links=document.getElementById('links');
